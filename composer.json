@@ -5,11 +5,17 @@
         "php": "^7.1.3",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "doctrine/doctrine-bundle": "^1.9",
+        "sensio/framework-extra-bundle": "^5.2",
         "symfony/console": "^4.1",
         "symfony/flex": "^1.0",
-        "symfony/framework-bundle": "^4.1",
         "symfony/lts": "^4@dev",
-        "symfony/yaml": "^4.1"
+        "symfony/orm-pack": "^1.0",
+        "symfony/yaml": "^4.1",
+        "symfony/framework-bundle": "~3.2",
+        "symfony/monolog-bundle": "~3.0",
+        "symfony/security-bundle": "~3.2",
+        "authbucket/oauth2-php": "~5.0.0-alpha4"
     },
     "require-dev": {
         "symfony/dotenv": "^4.1"
