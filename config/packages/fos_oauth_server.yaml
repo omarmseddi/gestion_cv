@@ -6,4 +6,3 @@ fos_oauth_server:
     auth_code_class: App\Entity\AuthCode
     service:
         user_provider: fos_user.yaml.user_provider.username
-  #C:\xampp\htdocs\gestion_cv\vendor\friendsofsymfony\oauth-server-bundle\Entity\AuthCode

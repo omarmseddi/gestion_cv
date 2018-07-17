@@ -18,10 +18,21 @@ security:
                     demousername3:  { roles: 'ROLE_USER', password: demopassword3 }
 
     firewalls:
-        api_oauth2_authorize:
-            pattern:                ^/api/oauth2/authorize$
-            http_basic:             ~
-            provider:               default
+        oauth_token:
+            pattern:    ^/oauth/v2/token
+            security:   false
+        oauth_authorize:
+            pattern:    ^/oauth/v2/auth
+            form_login:
+              provider: fos_userbundle
+              check_path: /oauth/v2/auth_login_check
+              login_path: /oauth/v2/auth_login
+            anonymous:  true
+        api:
+            pattern:    ^/api
+            fos_oauth:  true
+            stateless:  true
+            anonymous:  false
         main:
              pattern: ^/
              form_login:
@@ -39,3 +50,4 @@ security:
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
+        - { path: ^/api, roles: [ IS_AUTHENTICATED_FULLY ] }

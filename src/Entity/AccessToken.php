@@ -1,12 +1,23 @@
 <?php
-// src/Acme/ApiBundle/Entity/AccessToken.php
+// src/App/ApiBundle/Entity/AccessToken.php
 
 namespace App\Entity;
 
 use FOS\OAuthServerBundle\Entity\AccessToken as BaseAccessToken;
 use Doctrine\ORM\Mapping as ORM;
+
 /**
  * @ORM\Entity
+ *  @ORM\Table(name="AccessToken")
+ * @ORM\AttributeOverrides({
+ *      @ORM\AttributeOverride(name="token",
+ *          column=@ORM\Column(
+ *              name     = "token",
+ *              length   = 191,
+ *              unique   = true
+ *          )
+ *      )
+ * })
  */
 class AccessToken extends BaseAccessToken
 {
@@ -25,7 +36,6 @@ class AccessToken extends BaseAccessToken
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User")
-     * @ORM\JoinColumn(name="user_id", referencedColumnName="id", onDelete="CASCADE")
      */
     protected $user;
 }
