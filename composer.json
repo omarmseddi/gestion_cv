@@ -10,6 +10,7 @@
         "doctrine/doctrine-migrations-bundle": "^1.3",
         "friendsofsymfony/oauth-server-bundle": "dev-master",
         "friendsofsymfony/oauth2-php": "~1.1",
+        "friendsofsymfony/rest-bundle": "^2.3",
         "friendsofsymfony/user-bundle": "~2.0",
         "sensio/framework-extra-bundle": "^5.2",
         "symfony/console": "^4.1",
@@ -21,14 +22,18 @@
         "symfony/monolog-bundle": "~3.0",
         "symfony/orm-pack": "^1.0",
         "symfony/security-bundle": "~3.2",
+        "symfony/serializer": "~3.2",
         "symfony/swiftmailer-bundle": "^3.2",
         "symfony/templating": "~3.2",
         "symfony/twig-bundle": "~3.2",
-        "symfony/yaml": "^4.1"
+        "symfony/web-profiler-bundle": "~3.2",
+        "symfony/yaml": "^4.1",
+        "vgrem/php-spo": "dev-master"
     },
     "require-dev": {
         "symfony/dotenv": "^4.1",
-        "symfony/maker-bundle": "^1.5"
+        "symfony/maker-bundle": "^1.5",
+        "symfony/profiler-pack": "^1.0"
     },
     "config": {
         "preferred-install": {

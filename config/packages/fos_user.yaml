@@ -3,6 +3,6 @@ fos_user:
     firewall_name: main
     user_class: App\Entity\User
     from_email:
-        address: "omarmseddi@gmail.com"
+        address: "omarmseddi12@gmail.com"
         sender_name: "root"
 
