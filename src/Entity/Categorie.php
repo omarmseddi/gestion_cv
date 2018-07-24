@@ -7,16 +7,21 @@
  */
 
 namespace App\Entity;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 
 /**
- * @ORM\Entity()
- * @ORM\Table(name="Categorie")
+ *@ApiResource(attributes={
+ *     "normalization_context"={"groups"={"read_cat"}},
+ *     "denormalization_context"={"groups"={"write_cat"}}})
  */
 class Categorie
 {
     /**
+     * @Groups({"write", "read" ,"write_cat", "read_cat"})
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue
@@ -24,16 +29,21 @@ class Categorie
     protected $id;
 
     /**
+     * @Groups({"write", "read","write_cat", "read_cat"})
      * @ORM\Column(type="string")
      */
     protected $nom;
 
     /**
-     * @ORM\OneToMany(targetEntity="CV", mappedBy="Categorie")
+     * @Groups({"read_cat"})
+     * @ORM\OneToMany(targetEntity="CV", mappedBy="Categorie", cascade={"persist"})
      * @var CV[]
      */
     protected $CV;
-
+    public function __construct()
+    {
+        $this->CV = new ArrayCollection();
+    }
     /**
      * @return CV[]
      */

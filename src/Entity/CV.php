@@ -7,15 +7,25 @@
  */
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
+use Symfony\Component\Serializer\Annotation\Groups;
+
 
 /**
+ *  @ApiResource(attributes={
+ *     "normalization_context"={"groups"={"read"}},
+ *     "denormalization_context"={"groups"={"write"}}})
+
+ * })
  * @ORM\Entity()
  * @ORM\Table(name="CV")
  */
 class CV
 {
     /**
+     * @Groups({"write", "read","read_tech", "read_cat"})
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue
@@ -23,63 +33,78 @@ class CV
     protected $id;
 
     /**
+     * @Groups({"write", "read","read_tech", "read_cat"})
      * @ORM\Column(type="string")
      */
     protected $nom;
 
     /**
+     * @Groups({"write", "read","read_tech", "read_cat"})
      * @ORM\Column(type="string")
      */
     protected $prenom;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Categorie", inversedBy="CV")
+     * @Groups({"write", "read","read_tech"})
+     * @ORM\ManyToOne(targetEntity="Categorie", inversedBy="CV", cascade={"persist"})
      * @var Categorie
      */
     protected $categorie;
 
     /**
+     * @Groups({"write", "read" ,"read_tech", "read_cat"})
      * @ORM\Column(type="boolean")
      */
     protected $mission;
 
     /**
+     * @Groups({"write", "read" ,"read_tech", "read_cat"})
      * @ORM\Column(type="boolean")
      */
     protected $disponibilite;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Technologie")
+     * @Groups({"write", "read" , "read_cat"})
+     * @ORM\ManyToMany(targetEntity="Technologie", inversedBy="CV" , cascade={"persist"}) 
      * @var Technologie[]
      */
     protected $technologies;
 
+
     /**
+     * @Groups({"write", "read" ,"read_tech", "read_cat"})
      * @ORM\Column(type="integer")
      */
     protected $id_fichier;
 
     /**
-     * @ORM\Column(type="integer")
+     * @Groups({"write", "read" ,"read_tech", "read_cat"})
+     * @ORM\Column(type="string")
      */
     protected $type;
 
     /**
+     * @Groups({"write", "read" ,"read_tech", "read_cat"})
      * @ORM\Column(type="date")
      */
     protected $date_modification;
 
     /**
+     * @Groups({"write", "read" ,"read_tech", "read_cat"})
      * @ORM\Column(type="date")
      */
     protected $date_creation;
 
     /**
+     * @Groups({"write", "read" ,"read_tech", "read_cat"})
      * @ORM\Column(type="integer")
      */
     protected $creer_par;
 
-
+    public function __construct() {
+        $this->technologies = new ArrayCollection();
+        $this->date_creation=new \DateTime();
+    }
 
     /**
      * @return mixed

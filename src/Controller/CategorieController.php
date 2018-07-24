@@ -17,26 +17,5 @@ use App\Entity\Categorie;
 
 class CategorieController extends Controller
 {
-    /**
-     * @Route("/Categorie", name="Categorie_list")
-     * @Method({"GET"})
-     */
-    public function getCategorieAction(Request $request)
-    {
-        $Cats = $this->get('doctrine.orm.entity_manager')
-            ->getRepository('App:Categorie')
-            ->findAll();
-        /* @var $Cats Categorie[] */
 
-        $formatted = [];
-        foreach ($Cats as $Cat) {
-            $formatted[] = [
-                'id' => $Cat->getId(),
-                'nom' => $Cat->getNom()
-            ];
-        }
-        return new JsonResponse ($formatted);
-
-
-    }
 }

@@ -7,16 +7,24 @@
  */
 
 namespace App\Entity;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
+use Symfony\Component\Serializer\Annotation\Groups;
+
+
 
 
 /**
+ *@ApiResource(attributes={
+ *     "normalization_context"={"groups"={"read_tech"}},
+ *     "denormalization_context"={"groups"={"write_tech"}}})
  * @ORM\Entity()
- * @ORM\Table(name="Technologie")
  */
 class Technologie
 {
     /**
+     * @Groups({"write", "read","write_tech", "read_tech"})
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue
@@ -24,22 +32,28 @@ class Technologie
     protected $id;
 
     /**
+     * @Groups({"write", "read","write_tech", "read_tech"})
      * @ORM\Column(type="string")
      */
     protected $nom;
 
     /**
+     * @Groups({"write", "read","write_tech", "read_tech"})
      * @ORM\Column(type="boolean")
      */
     protected $status;
 
     /**
-     * @ORM\ManyToMany(targetEntity="CV")
+     * @Groups({"read_cat", "read_tech"})
+     * @ORM\ManyToMany(targetEntity="Technologie", mappedBy="CV", cascade={"persist"})
      * @var CV[]
      */
     protected $CV;
 
-
+    public function __construct()
+    {
+        $this->CV = new ArrayCollection();
+    }
     /**
      * @return mixed
      */

@@ -1,13 +1,3 @@
 controllers:
     resource: ../../src/Controller/
     type: annotation
-CategorieController:
-    resource: App\Controller\CategorieController
-    type: annotation
-
-TechnologieController:
-    resource: App\Controller\TechnologieController
-    type: annotation
-sharePointController:
-    resource: App\Controller\sharePointController
-    type: annotation
