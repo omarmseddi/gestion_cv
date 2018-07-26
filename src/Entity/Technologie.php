@@ -11,8 +11,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Symfony\Component\Serializer\Annotation\Groups;
-
-
+use App\Entity\CV;
 
 
 /**
@@ -32,20 +31,20 @@ class Technologie
     protected $id;
 
     /**
-     * @Groups({"write", "read","write_tech", "read_tech"})
+     * @Groups({"write", "read","write_tech", "read_tech","read_cat"})
      * @ORM\Column(type="string")
      */
     protected $nom;
 
     /**
-     * @Groups({"write", "read","write_tech", "read_tech"})
+     * @Groups({"write", "read","write_tech", "read_tech","read_cat"})
      * @ORM\Column(type="boolean")
      */
     protected $status;
 
     /**
-     * @Groups({"read_cat", "read_tech"})
-     * @ORM\ManyToMany(targetEntity="Technologie", mappedBy="CV", cascade={"persist"})
+     * @Groups({"read_tech"})
+     * @ORM\ManyToMany(targetEntity="CV", mappedBy="technologies", cascade={"persist"})
      * @var CV[]
      */
     protected $CV;
@@ -103,15 +102,15 @@ class Technologie
     }
 
     /**
-     * @return CV[]
+     * @return mixed
      */
-    public function getCV(): array
+    public function getCV()
     {
         return $this->CV;
     }
 
     /**
-     * @param CV[] $CV
+     * @param mixed $CV
      */
     public function setCV(array $CV): void
     {

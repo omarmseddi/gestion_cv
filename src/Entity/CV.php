@@ -11,7 +11,8 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Symfony\Component\Serializer\Annotation\Groups;
-
+use App\Entity\Categorie;
+use App\Entity\Technologie;
 
 /**
  *  @ApiResource(attributes={
@@ -45,6 +46,37 @@ class CV
     protected $prenom;
 
     /**
+     * @Groups({"write", "read" ,"read_tech", "read_cat"})
+     * @ORM\Column(type="integer")
+     */
+    protected $idSp;
+
+    /**
+     * @Groups({"write", "read" ,"read_tech", "read_cat"})
+     * @ORM\Column(type="string")
+     */
+    protected $type;
+
+    /**
+     * @Groups({"write", "read" ,"read_tech", "read_cat"})
+     * @ORM\Column(type="date")
+     */
+    protected $dateModification;
+
+    /**
+     * @Groups({"write", "read" ,"read_tech", "read_cat"})
+     * @ORM\Column(type="date")
+     */
+    protected $dateCreation;
+
+    /**
+     * @Groups({"write", "read" ,"read_tech", "read_cat"})
+     * @ORM\Column(type="integer")
+     */
+    protected $creerPar;
+
+
+    /**
      * @Groups({"write", "read","read_tech"})
      * @ORM\ManyToOne(targetEntity="Categorie", inversedBy="CV", cascade={"persist"})
      * @var Categorie
@@ -71,39 +103,11 @@ class CV
     protected $technologies;
 
 
-    /**
-     * @Groups({"write", "read" ,"read_tech", "read_cat"})
-     * @ORM\Column(type="integer")
-     */
-    protected $id_fichier;
 
-    /**
-     * @Groups({"write", "read" ,"read_tech", "read_cat"})
-     * @ORM\Column(type="string")
-     */
-    protected $type;
-
-    /**
-     * @Groups({"write", "read" ,"read_tech", "read_cat"})
-     * @ORM\Column(type="date")
-     */
-    protected $date_modification;
-
-    /**
-     * @Groups({"write", "read" ,"read_tech", "read_cat"})
-     * @ORM\Column(type="date")
-     */
-    protected $date_creation;
-
-    /**
-     * @Groups({"write", "read" ,"read_tech", "read_cat"})
-     * @ORM\Column(type="integer")
-     */
-    protected $creer_par;
 
     public function __construct() {
         $this->technologies = new ArrayCollection();
-        $this->date_creation=new \DateTime();
+        $this->dateCreation=new \DateTime();
     }
 
     /**
@@ -189,17 +193,17 @@ class CV
     /**
      * @return mixed
      */
-    public function getIdFichier()
+    public function getIdSp()
     {
-        return $this->id_fichier;
+        return $this->idSp;
     }
 
     /**
-     * @param mixed $id_fichier
+     * @param mixed $idSp
      */
-    public function setIdFichier($id_fichier): void
+    public function setIdSp($idSp): void
     {
-        $this->id_fichier = $id_fichier;
+        $this->idSp = $idSp;
     }
 
     /**
@@ -207,15 +211,15 @@ class CV
      */
     public function getDateModification()
     {
-        return $this->date_modification;
+        return $this->dateModification;
     }
 
     /**
-     * @param mixed $date_modification
+     * @param mixed $dateModification
      */
-    public function setDateModification($date_modification): void
+    public function setDateModification($dateModification): void
     {
-        $this->date_modification = $date_modification;
+        $this->dateModification = $dateModification;
     }
 
     /**
@@ -223,15 +227,15 @@ class CV
      */
     public function getDateCreation()
     {
-        return $this->date_creation;
+        return $this->dateCreation;
     }
 
     /**
-     * @param mixed $date_creation
+     * @param mixed $dateCreation
      */
-    public function setDateCreation($date_creation): void
+    public function setDateCreation($dateCreation): void
     {
-        $this->date_creation = $date_creation;
+        $this->dateCreation = $dateCreation;
     }
 
     /**
@@ -239,16 +243,17 @@ class CV
      */
     public function getCreerPar()
     {
-        return $this->creer_par;
+        return $this->creerPar;
     }
 
     /**
-     * @param mixed $creer_par
+     * @param mixed $creerPar
      */
-    public function setCreerPar($creer_par): void
+    public function setCreerPar($creerPar): void
     {
-        $this->creer_par = $creer_par;
+        $this->creerPar = $creerPar;
     }
+
 
     /**
      * @return mixed

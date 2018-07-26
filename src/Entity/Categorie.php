@@ -11,17 +11,19 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Symfony\Component\Serializer\Annotation\Groups;
-
+use App\Entity\CV;
 
 /**
  *@ApiResource(attributes={
  *     "normalization_context"={"groups"={"read_cat"}},
  *     "denormalization_context"={"groups"={"write_cat"}}})
+ * @ORM\Entity()
  */
+
 class Categorie
 {
     /**
-     * @Groups({"write", "read" ,"write_cat", "read_cat"})
+     * @Groups({"write", "read" ,"write_cat", "read_cat" , "read_tech"})
      * @ORM\Id
      * @ORM\Column(type="integer")
      * @ORM\GeneratedValue
@@ -29,14 +31,14 @@ class Categorie
     protected $id;
 
     /**
-     * @Groups({"write", "read","write_cat", "read_cat"})
+     * @Groups({"write", "read","write_cat", "read_cat" , "read_tech"})
      * @ORM\Column(type="string")
      */
     protected $nom;
 
     /**
      * @Groups({"read_cat"})
-     * @ORM\OneToMany(targetEntity="CV", mappedBy="Categorie", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="CV", mappedBy="categorie", cascade={"persist"})
      * @var CV[]
      */
     protected $CV;
@@ -44,22 +46,24 @@ class Categorie
     {
         $this->CV = new ArrayCollection();
     }
+
     /**
-     * @return CV[]
+     * @return mixed
      */
-    public function getCV(): array
+    public function getCV()
     {
         return $this->CV;
     }
 
-
     /**
-     * @param CV $CV
+     * @param mixed $CV
      */
-    public function setCV(CV $CV): void
+    public function setCV(array $CV): void
     {
         $this->CV = $CV;
     }
+
+
 
 
     /**
