@@ -5,11 +5,6 @@
                 <h1>Ajouter un CV</h1>
                 {{ form_start(CVForm) }}
                 {{ form_widget(CVForm) }}
-                {% for technologie in technologies %}
-                    <label for="tech">{{ technologie.nom }}</label>
-                    <input type="checkbox" id="tech" name={{ technologie.nom }}>
-                {% endfor %}
-                <button type="submit" class="btn btn-primary">Ajouter</button>
                 {{ form_end(CVForm) }}
             </div>
         </div>

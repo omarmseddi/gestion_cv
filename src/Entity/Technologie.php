@@ -5,16 +5,12 @@
  * Date: 19/07/2018
  * Time: 11:21
  */
-
 namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Symfony\Component\Serializer\Annotation\Groups;
-
-
-
-
+use App\Entity\CV;
 /**
  *@ApiResource(attributes={
  *     "normalization_context"={"groups"={"read_tech"}},
@@ -30,26 +26,22 @@ class Technologie
      * @ORM\GeneratedValue
      */
     protected $id;
-
     /**
-     * @Groups({"write", "read","write_tech", "read_tech"})
+     * @Groups({"write", "read","write_tech", "read_tech","read_cat"})
      * @ORM\Column(type="string")
      */
     protected $nom;
-
     /**
-     * @Groups({"write", "read","write_tech", "read_tech"})
-     * @ORM\Column(type="boolean")
+     * @Groups({"write", "read","write_tech", "read_tech","read_cat"})
+     * @ORM\Column(type="boolean", options={"default"= true},nullable=true)
      */
     protected $status;
-
     /**
-     * @Groups({"read_cat", "read_tech"})
-     * @ORM\ManyToMany(targetEntity="Technologie", mappedBy="CV", cascade={"persist"})
+     * @Groups({"read_tech"})
+     * @ORM\ManyToMany(targetEntity="CV", mappedBy="technologies", cascade={"persist"})
      * @var CV[]
      */
     protected $CV;
-
     public function __construct()
     {
         $this->CV = new ArrayCollection();
@@ -61,7 +53,6 @@ class Technologie
     {
         return $this->id;
     }
-
     /**
      * @param mixed $id
      */
@@ -69,7 +60,6 @@ class Technologie
     {
         $this->id = $id;
     }
-
     /**
      * @return mixed
      */
@@ -77,7 +67,6 @@ class Technologie
     {
         return $this->nom;
     }
-
     /**
      * @param mixed $nom
      */
@@ -85,7 +74,6 @@ class Technologie
     {
         $this->nom = $nom;
     }
-
     /**
      * @return mixed
      */
@@ -93,7 +81,6 @@ class Technologie
     {
         return $this->status;
     }
-
     /**
      * @param mixed $status
      */
@@ -101,25 +88,21 @@ class Technologie
     {
         $this->status = $status;
     }
-
     /**
-     * @return CV[]
+     * @return mixed
      */
-    public function getCV(): array
+    public function getCV()
     {
         return $this->CV;
     }
-
     /**
-     * @param CV[] $CV
+     * @param mixed $CV
      */
     public function setCV(array $CV): void
     {
         $this->CV = $CV;
     }
     public function __toString() {
-        return (string) $this->nom;
+        return $this->nom;
     }
-
-
 }
