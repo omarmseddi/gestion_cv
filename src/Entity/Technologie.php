@@ -117,6 +117,9 @@ class Technologie
     {
         $this->CV = $CV;
     }
+    public function __toString() {
+        return (string) $this->nom;
+    }
 
 
 }

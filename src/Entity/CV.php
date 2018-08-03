@@ -11,12 +11,15 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 
 /**
  *  @ApiResource(attributes={
  *     "normalization_context"={"groups"={"read"}},
- *     "denormalization_context"={"groups"={"write"}}})
+ *     "denormalization_context"={"groups"={"write"}}},
+ *     collectionOperations={"get"},
+ *     itemOperations={"get"})
 
  * })
  * @ORM\Entity()
@@ -47,7 +50,6 @@ class CV
     /**
      * @Groups({"write", "read","read_tech"})
      * @ORM\ManyToOne(targetEntity="Categorie", inversedBy="CV", cascade={"persist"})
-     * @var Categorie
      */
     protected $categorie;
 
@@ -73,31 +75,26 @@ class CV
 
     /**
      * @Groups({"write", "read" ,"read_tech", "read_cat"})
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer" , nullable=true)
      */
     protected $id_fichier;
+    private $fichier;
 
     /**
      * @Groups({"write", "read" ,"read_tech", "read_cat"})
-     * @ORM\Column(type="string")
-     */
-    protected $type;
-
-    /**
-     * @Groups({"write", "read" ,"read_tech", "read_cat"})
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="date" , nullable=true)
      */
     protected $date_modification;
 
     /**
      * @Groups({"write", "read" ,"read_tech", "read_cat"})
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="date" , nullable=true)
      */
     protected $date_creation;
 
     /**
      * @Groups({"write", "read" ,"read_tech", "read_cat"})
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer" , nullable=true)
      */
     protected $creer_par;
 
@@ -269,25 +266,25 @@ class CV
     /**
      * @return mixed
      */
-    public function getType()
+    public function getNom()
     {
-        return $this->type;
-    }
-
-    /**
-     * @param mixed $type
-     */
-    public function setType($type): void
-    {
-        $this->type = $type;
+        return $this->nom;
     }
 
     /**
      * @return mixed
      */
-    public function getNom()
+    public function getFichier()
     {
-        return $this->nom;
+        return $this->fichier;
+    }
+
+    /**
+     * @param mixed $fichier
+     */
+    public function setFichier($fichier): void
+    {
+        $this->fichier = $fichier;
     }
 
     /**
