@@ -3,13 +3,15 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 
 /**
  * @ORM\Entity
- *  * @ORM\Table(name="fos_user")
+ * @ORM\Table(name="fos_user")
  * @ORM\AttributeOverrides({
  *      @ORM\AttributeOverride(name="usernameCanonical",
  *          column=@ORM\Column(
@@ -36,9 +38,49 @@ class User extends BaseUser
      */
     protected $id;
 
+
+    /**
+     * @Groups({"write", "read" })
+     * @ORM\OneToMany(targetEntity="CV", mappedBy="creerPar", cascade={"persist","remove"})
+     * @var CV[]
+     */
+    protected $CV;
+
     public function __construct()
     {
         parent::__construct();
-        // your own logic
+        $this->CV = new ArrayCollection();
+
+    }
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id): void
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCV()
+    {
+        return $this->CV;
+    }
+
+    /**
+     * @param mixed $CV
+     */
+    public function setCV(array $CV): void
+    {
+        $this->CV = $CV;
     }
 }

@@ -13,13 +13,24 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use Symfony\Component\Serializer\Annotation\Groups;
 use App\Entity\Categorie;
 use App\Entity\Technologie;
-
+use App\Controller\CVController;
 /**
  *  @ApiResource(attributes={
- *     "normalization_context"={"groups"={"read"}},
- *     "denormalization_context"={"groups"={"write"}}})
-
- * })
+ *                      "normalization_context"={"groups"={"read"}},
+ *                      "denormalization_context"={"groups"={"write"}},
+ *                      "force_eager"=false
+ *              },
+ *              collectionOperations={
+ *                      "get" ,
+ *                      "special"={"route_name"="post_cv"}
+ *              },
+ *              itemOperations={
+ *                      "get",
+ *                      "special"={"route_name"="put_cv"},
+ *                      "delete"
+ *              }
+ *
+ * )
  * @ORM\Entity()
  * @ORM\Table(name="CV")
  */
@@ -47,7 +58,7 @@ class CV
 
     /**
      * @Groups({"write", "read" ,"read_tech", "read_cat"})
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      */
     protected $idSp;
 
@@ -71,17 +82,20 @@ class CV
 
     /**
      * @Groups({"write", "read" ,"read_tech", "read_cat"})
-     * @ORM\Column(type="integer")
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="CV", cascade={"persist","remove"})
+     * @var User (nullable=true)
      */
     protected $creerPar;
 
 
     /**
      * @Groups({"write", "read","read_tech"})
-     * @ORM\ManyToOne(targetEntity="Categorie", inversedBy="CV", cascade={"persist"})
-     * @var Categorie
+     * @ORM\ManyToOne(targetEntity="Categorie", inversedBy="CV", cascade={"persist","remove"})
+     * @var Categorie (nullable=true)
      */
     protected $categorie;
+
+
 
     /**
      * @Groups({"write", "read" ,"read_tech", "read_cat"})
@@ -98,16 +112,22 @@ class CV
     /**
      * @Groups({"write", "read" , "read_cat"})
      * @ORM\ManyToMany(targetEntity="Technologie", inversedBy="CV" , cascade={"persist"}) 
-     * @var Technologie[]
+     * @var Technologie[] (nullable=true)
      */
     protected $technologies;
 
 
-
+    /**
+     *  @Groups({"write"})
+     * @var Technologie[] (nullable=true)
+     */
+    protected $addTechnologies;
 
     public function __construct() {
-        $this->technologies = new ArrayCollection();
+       // $this->technologies = new ArrayCollection();
         $this->dateCreation=new \DateTime();
+        $this->dateModification=new \DateTime();
+
     }
 
     /**
@@ -151,12 +171,13 @@ class CV
     }
 
     /**
-     * @param mixed $id_categorie
+     * @param mixed $categorie
      */
     public function setCategorie($categorie): void
     {
         $this->categorie = $categorie;
     }
+
 
     /**
      * @return mixed
@@ -270,6 +291,23 @@ class CV
     {
         $this->technologies = $technologies;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getAddTechnologies()
+    {
+        return $this->addTechnologies;
+    }
+
+    /**
+     * @param mixed $addTechnologies
+     */
+    public function setAddTechnologies( $addTechnologies): void
+    {
+        $this->addTechnologies = $addTechnologies;
+    }
+
 
     /**
      * @return mixed

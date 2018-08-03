@@ -38,7 +38,7 @@ class Categorie
 
     /**
      * @Groups({"read_cat"})
-     * @ORM\OneToMany(targetEntity="CV", mappedBy="categorie", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="CV", mappedBy="categorie", cascade={"persist","remove"})
      * @var CV[]
      */
     protected $CV;
@@ -62,8 +62,6 @@ class Categorie
     {
         $this->CV = $CV;
     }
-
-
 
 
     /**
@@ -98,5 +96,8 @@ class Categorie
         $this->nom = $nom;
     }
 
+    public function __toString(){
+        return (string) $this->nom;
+    }
 
 }

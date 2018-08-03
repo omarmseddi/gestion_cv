@@ -38,7 +38,7 @@ class Technologie
 
     /**
      * @Groups({"write", "read","write_tech", "read_tech","read_cat"})
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", options={"default"= true},nullable=true)
      */
     protected $status;
 
@@ -115,6 +115,10 @@ class Technologie
     public function setCV(array $CV): void
     {
         $this->CV = $CV;
+    }
+
+    public function __toString() {
+        return $this->nom;
     }
 
 
