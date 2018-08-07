@@ -26,6 +26,12 @@ security:
                 check_path: /oauth/v2/auth_login_check
                 login_path: /oauth/v2/auth_login
             anonymous: true
+        api:
+            pattern: ^/api
+            fos_oauth:  true
+            stateless:  true
+            anonymous:  false
+            provider: fos_userbundle
         main:
             anonymous: ~
             pattern: ^/
@@ -57,5 +63,4 @@ security:
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
         - { path: ^/oauth/v2/auth_login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/number, roles: [ IS_AUTHENTICATED_FULLY ] }
-        - { path: ^/api/c_vs, roles: [ IS_AUTHENTICATED_FULLY ] }
+        - { path: ^/api/c_vs, roles: [ IS_AUTHENTICATED_ANONYMOUSLY ] }
