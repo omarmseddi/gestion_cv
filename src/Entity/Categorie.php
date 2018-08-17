@@ -26,6 +26,7 @@ use App\Entity\CV;
  *      )
  * })
  */
+
 class Categorie
 {
     /**
@@ -57,6 +58,7 @@ class Categorie
     {
         return $this->CV;
     }
+
     /**
      * @param mixed $CV
      */
@@ -71,6 +73,7 @@ class Categorie
     {
         return $this->id;
     }
+
     /**
      * @param mixed $id
      */

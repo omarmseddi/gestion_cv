@@ -21,6 +21,5 @@ class Client extends BaseClient
     public function __construct()
     {
         parent::__construct();
-        // votre propre logique
     }
 }
