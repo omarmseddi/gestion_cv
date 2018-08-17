@@ -1,0 +1,54 @@
+<kendo-grid [data]="gridView"
+            [pageable]="{
+          buttonCount: buttonCount,
+          info: info,
+          type: type,
+          pageSizes: pageSizes,
+          previousNext: previousNext
+        }"
+            [pageSize]="state.take"
+            [skip]="state.skip"
+            [sortable]="true"
+            [sort]="state.sort"
+            [filter]="state.filter"
+            [groupable]="true"
+            [group]="state.group"
+            [selectable]="true"
+            (dataStateChange)="dataStateChange($event)"
+            [filterable]="true" [scrollable]="'none'" (remove)="removeHandler($event)"
+            [navigable]="true">
+  <ng-template kendoGridToolbarTemplate>
+    <button  class="btn btn-lg btn-info" type="button" [routerLink]="['/ajouterCv']" [routerLinkActive]="['router-link-active']">AjouterCv</button>
+  </ng-template>
+  <kendo-grid-column field="nom" title="nom" width="130"></kendo-grid-column>
+  <kendo-grid-column field="prenom" width="130"></kendo-grid-column>
+  <kendo-grid-column field="categorie" title="categorie" width="130"></kendo-grid-column>
+  <kendo-grid-column field="technologie" title="technologie" width="130"></kendo-grid-column>
+  <kendo-grid-column field="mission" width="120" filter="boolean">
+    <ng-template kendoGridCellTemplate let-dataItem>
+      <input type="checkbox" [checked]="dataItem.mission" disabled/>
+    </ng-template>
+  </kendo-grid-column>
+  <kendo-grid-column field="disponibilite" width="120" filter="boolean">
+    <ng-template kendoGridCellTemplate let-dataItem>
+      <input type="checkbox" [checked]="dataItem.disponibilite" disabled/>
+    </ng-template>
+  </kendo-grid-column>
+  <kendo-grid-command-column title="cv" field='fileName,file' width="130">
+    <ng-template kendoGridCellTemplate let-dataItem="dataItem">
+      <button  class="btn btn-sm btn-default"   (click)="getFile(dataItem.idsp);">{{dataItem.prenom}} cv.{{dataItem.type}}</button>
+    </ng-template>
+  </kendo-grid-command-column>
+  <kendo-grid-command-column title="command" width="220">
+    <ng-template kendoGridCellTemplate let-isNew="isNew">
+      <button  class="btn btn-sm btn-info">Modifier</button>
+      <div kendoGridRemoveCommand >
+      <button  class="btn btn-sm btn-danger !important">Supprimer</button>
+      </div>
+    </ng-template>
+  </kendo-grid-command-column>
+    <ng-template kendoGridGroupHeaderTemplate let-value="value">
+      {{value.nom}}
+    </ng-template>
+</kendo-grid>
+

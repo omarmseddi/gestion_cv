@@ -30,7 +30,7 @@ use App\Controller\CVController;
  *              }
  *
  * )
- * @ORM\Entity()
+ * @ORM\Entity(repositoryClass="App\Repository\CvRepository")
  * @ORM\Table(name="CV")
  */
 class CV
@@ -60,25 +60,11 @@ class CV
     private $fichier;
     /**
      * @Groups({"write", "read" ,"read_tech", "read_cat"})
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     protected $type;
 
-    /**
-     * @return mixed
-     */
-    public function getFichier()
-    {
-        return $this->fichier;
-    }
 
-    /**
-     * @param mixed $fichier
-     */
-    public function setFichier($fichier): void
-    {
-        $this->fichier = $fichier;
-    }
     /**
      * @Groups({"write", "read" ,"read_tech", "read_cat"})
      * @ORM\Column(type="date")
@@ -90,14 +76,14 @@ class CV
      */
     protected $dateCreation;
     /**
-     * @Groups({"write", "read" ,"read_tech", "read_cat"})
-     * @ORM\ManyToOne(targetEntity="User", inversedBy="CV", cascade={"persist","remove"})
+     * @Groups({"read" ,"read_tech", "read_cat"})
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="CV", cascade={"persist"})
      * @var User (nullable=true)
      */
     protected $creerPar;
     /**
      * @Groups({"write", "read","read_tech"})
-     * @ORM\ManyToOne(targetEntity="Categorie", inversedBy="CV", cascade={"persist","remove"})
+     * @ORM\ManyToOne(targetEntity="Categorie", inversedBy="CV", cascade={"persist"})
      * @var Categorie (nullable=true)
      */
     protected $categorie;
@@ -121,6 +107,21 @@ class CV
         // $this->technologies = new ArrayCollection();
         $this->dateCreation=new \DateTime();
         $this->dateModification=new \DateTime();
+    }
+    /**
+     * @return mixed
+     */
+    public function getFichier()
+    {
+        return $this->fichier;
+    }
+
+    /**
+     * @param mixed $fichier
+     */
+    public function setFichier($fichier): void
+    {
+        $this->fichier = $fichier;
     }
     /**
      * @return mixed

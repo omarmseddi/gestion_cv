@@ -13,8 +13,24 @@ use Symfony\Component\Serializer\Annotation\Groups;
 use App\Entity\CV;
 /**
  *@ApiResource(attributes={
- *     "normalization_context"={"groups"={"read_tech"}},
- *     "denormalization_context"={"groups"={"write_tech"}}})
+ *                        "normalization_context"={"groups"={"read_tech"}},
+ *                        "denormalization_context"={"groups"={"write_tech"}}
+ *                        },
+ *              collectionOperations={
+ *                      "get" ,
+ *                       "post",
+ *                      "special"={"route_name"="get_techno_by_status"},
+ *                       "delete"
+ *              })
+ * @ORM\AttributeOverrides({
+ *      @ORM\AttributeOverride(name="nom",
+ *          column=@ORM\Column(
+ *              name     = "nom",
+ *              length   = 191,
+ *              unique   = true
+ *          )
+ *      )
+ * })
  * @ORM\Entity()
  */
 class Technologie
@@ -102,7 +118,7 @@ class Technologie
     {
         $this->CV = $CV;
     }
-    public function __toString() {
-        return $this->nom;
+    public function __toString(){
+        return (string) $this->nom;
     }
 }

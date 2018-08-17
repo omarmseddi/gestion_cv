@@ -15,7 +15,16 @@ use App\Entity\CV;
  *@ApiResource(attributes={
  *     "normalization_context"={"groups"={"read_cat"}},
  *     "denormalization_context"={"groups"={"write_cat"}}})
- * @ORM\Entity()
+ * @ORM\Entity(repositoryClass="App\Repository\CvRepository")
+ * @ORM\AttributeOverrides({
+ *      @ORM\AttributeOverride(name="nom",
+ *          column=@ORM\Column(
+ *              name     = "nom",
+ *              length   = 191,
+ *              unique   = true
+ *          )
+ *      )
+ * })
  */
 class Categorie
 {
@@ -32,7 +41,7 @@ class Categorie
      */
     protected $nom;
     /**
-     * @Groups({"read_cat"})
+     * @Groups({"read_cat","write_cat"})
      * @ORM\OneToMany(targetEntity="CV", mappedBy="categorie", cascade={"persist","remove"})
      * @var CV[]
      */

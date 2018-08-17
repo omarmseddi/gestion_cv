@@ -6,7 +6,9 @@
 parameters:
     env(DATABASE_HOST): 'localhost'
     locale: 'en'
-
+    username: 'mkhanfir-stg@spark-it.fr'
+    password: 'aminaAMINA2015.'
+    urlSp: 'https://sparkitcorp.sharepoint.com/sites/test2'
 services:
     # default configuration for services in *this* file
     _defaults:

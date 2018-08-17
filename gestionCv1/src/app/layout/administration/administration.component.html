@@ -1,0 +1,145 @@
+<div [@routerTransition]>
+  <app-page-header [heading]="'Administration'" [icon] ="'fa-edit'"></app-page-header>
+
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="card mb-3">
+        <div class="card-header">
+          Technologie
+        </div>
+        <div class="card-body table-responsive" style="height:15cm">
+          <table class="table" name="technologies" >
+            <thead>
+            <tr>
+              <th>Nom</th>
+              <th> </th>
+              <th >status</th>
+              <th> </th>
+
+              <th> </th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+            </thead>
+          <tr *ngFor="let techno of technologies">
+            <td *ngIf="showInputT != techno.id ">{{techno.nom}}</td>
+
+            <td>
+              <form class="form-group" #ft="ngForm">
+                <input type="text" [(ngModel)]="techno.nom" name="nom"  *ngIf="showInputT == techno.id" >
+              </form>
+            </td>
+
+            <td ><input  type="checkbox" [checked]=techno.status *ngIf="showInputT != techno.id" disabled> </td>
+            <td >
+              <form class="form-group" #ftt="ngForm">
+                <input  type="checkbox"  *ngIf="showInputT == techno.id"  ngModel #status="ngModel" name="status" value=" " >
+              </form>
+            </td>
+
+            <td><button type="button" class="btn btn-info" (click)="showInputTech(techno.id)" *ngIf="showInputT != techno.id">Modifier</button></td>
+            <td>
+              <button type="button" class="btn btn-sm btn-success" (click)="putTechnologie(ft.value.nom,ftt.value.status,techno.id)" *ngIf="showInputT == techno.id" >
+                Modifier
+              </button>
+            </td>
+
+            <td> <button type="button" class="btn btn-danger" (click)="removeTechnologie(techno.id);"  *ngIf="showInputT != techno.id">supprimer</button></td>
+            <td>
+                <button type="button" class="btn btn-sm btn-info" (click)="showTech(techno.id)" *ngIf="showInputT == techno.id">Annuler </button>
+            </td>
+          </tr>
+          </tbody>
+          </table>
+        </div>
+
+
+
+        <h4>Ajouter une technologie</h4>
+        <form  role="form" (ngSubmit)="onSubmitTechnologie(ftech)" #ftech="ngForm" >
+          <fieldset class="form-group">
+            <input class="form-control"  ngModel #nom="ngModel" name="nom"  placeholder="Technologie"  >
+            <p>{{techError}}</p>
+          </fieldset>
+
+          <fieldset class="form-group">
+            <label>Status</label>
+            <div class="radio">
+              <label>
+                <input type="radio"  ngModel #status="ngModel" name="status" value="" [checked]="true" > Oui
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio"   ngModel #status="ngModel" name="status"  value=" " > Non
+              </label>
+            </div>
+          </fieldset>
+
+          <button type="submit" class="btn btn-secondary">Ajouter</button>
+          <button type="reset" class="btn btn-secondary">Annuler</button>
+
+        </form>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="card mb-3">
+        <div class="card-header">
+          Categories
+        </div>
+        <div class="card-body table-responsive" style="height:15cm">
+          <table class="table"  name="categories">
+            <thead>
+            <tr>
+              <th>Nom</th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let cat of categories">
+              <td  *ngIf="showInputC != cat.id">{{cat.nom}}</td>
+              <td>
+                <form class="form-group" #fc="ngForm">
+                  <input type="text" [(ngModel)]="cat.nom" name="nom" id="nom" *ngIf="showInputC == cat.id" >
+                </form>
+              </td>
+
+              <td><button type="button" class="btn btn-info" (click)="showInputCat(cat.id)" *ngIf="showInputC != cat.id">Modifier</button></td>
+              <td>
+                <button type="button" class="btn btn-sm btn-success" (click)="putCategorie(fc.value.nom,cat.id)" *ngIf="showInputC == cat.id" >
+                  Modifier
+                </button>
+              </td>
+
+              <td> <button type="button" class="btn btn-danger" (click)="removeCategorie(cat.id);"  *ngIf="showInputC != cat.id">supprimer</button></td>
+              <td>
+                <button type="button" class="btn btn-sm btn-info" (click)="showCat(cat.id)" *ngIf="showInputC == cat.id">Annuler </button>
+              </td>
+            </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+
+        <h4>Ajouter une categorie</h4>
+
+        <form  role="form" (ngSubmit)="onSubmitCategorie(fcat)" #fcat="ngForm"  >
+          <fieldset class="form-group">
+            <input class="form-control" ngModel #nom="ngModel" name="nom" placeholder="Categorie" >
+            <p>{{catError}}</p>
+          </fieldset>
+
+
+          <button type="submit" class="btn btn-secondary">Ajouter</button>
+          <button type="reset" class="btn btn-secondary">Annuler</button>
+
+        </form>
+      </div>
+    </div>
+</div>
+</div>

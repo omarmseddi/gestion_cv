@@ -1,0 +1,73 @@
+<div [@routerTransition]>
+  <app-page-header [heading]="'Ajouter un CV'" [icon]="'fa-ajouter_cv'"></app-page-header>
+  <div class="row">
+      <div class="col-lg-12">
+        <div style="margin-left: 300px ;margin-right: 300px" >
+        <form role="form"  name="cv"(ngSubmit)="onSubmit(f)" #f="ngForm">
+          <fieldset class="form-group" style="border-width: 400px">
+            <input class="form-control"  ngModel #nom="ngModel" name="nom" placeholder="Nom" >
+            <p>{{nomError}}</p>
+          </fieldset>
+          <fieldset class="form-group">
+            <input class="form-control" ngModel #prenom="ngModel" name="prenom" placeholder="Prenom">
+            <p>{{prenomError}}</p>
+          </fieldset>
+
+          <fieldset class="form-group">
+            <label for="exampleInputFile">Ajouter le fichier</label>
+            <input type="file" class="form-control-file"  (change)="readData($event)" id="exampleInputFile" name="fichier">
+          </fieldset>
+          <div class="form-group">
+            <label>Catégorie</label>
+            <select class="form-control" ngModel #categorie="ngModel" name="categorie">
+              <option *ngFor="let categ of categories" >{{categ.nom}}</option>
+            </select>
+            <p>{{techError}}</p>
+          </div>
+
+          <fieldset class="form-group">
+            <label>Mission</label>
+            <div class="radio">
+              <label>
+                <input type="radio" ngModel #mission="ngModel"  name="mission"  value="" checked="" required> Oui
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" ngModel #mission="ngModel"  name="mission" value=" "> Non
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-group">
+            <label>disponibilite</label>
+            <div class="radio">
+              <label>
+                <input type="radio"  ngModel #disponibilite="ngModel" name="disponibilite" value="" checked=""> Oui
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio"   ngModel #disponibilite="ngModel" name="disponibilite"  value=" " > Non
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="form-group">
+            <label>Technologies</label>
+            <select multiple="" class="form-control"  ngModel  #technologie="ngModel" name="technologie">
+              <option *ngFor="let techno of technologies"> {{techno.nom}}</option>
+            </select>
+            <p>{{techError}}</p>
+
+          </div>
+
+
+          <button type="submit" class="btn btn-secondary">Ajouter</button>
+          <button type="reset" class="btn btn-secondary">Annuler</button>
+
+        </form>
+    </div>
+  </div>
+</div>
+</div>
