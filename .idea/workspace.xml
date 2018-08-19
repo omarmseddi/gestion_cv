@@ -4,14 +4,7 @@
     <list default="true" id="46c1d0aa-504d-4a26-a83a-11190a91f645" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/config/services.yaml" afterPath="$PROJECT_DIR$/config/services.yaml" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/CvController.php" afterPath="$PROJECT_DIR$/src/Controller/CvController.php" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/TechnologieController.php" afterPath="$PROJECT_DIR$/src/Controller/TechnologieController.php" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/CV.php" afterPath="$PROJECT_DIR$/src/Entity/CV.php" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Categorie.php" afterPath="$PROJECT_DIR$/src/Entity/Categorie.php" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Technologie.php" afterPath="$PROJECT_DIR$/src/Entity/Technologie.php" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" afterPath="$PROJECT_DIR$/src/Entity/User.php" />
-      <change beforePath="$PROJECT_DIR$/src/Form/CVFormType.php" afterPath="$PROJECT_DIR$/src/Form/CVFormType.php" />
-      <change beforePath="$PROJECT_DIR$/src/Form/CVType.php" afterPath="$PROJECT_DIR$/src/Form/CVType.php" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/CVController.php" afterPath="$PROJECT_DIR$/src/Controller/CVController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,14 +18,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CvController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Controller/CvController.php">
+      <file leaf-file-name="CVController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Controller/CVController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+            <state relative-caret-position="17">
+              <caret line="58" column="49" lean-forward="false" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="49" />
               <folding>
                 <element signature="e#34#52#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CVType.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Form/CVType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="35" column="26" lean-forward="false" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="services.yaml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/services.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="31" column="46" lean-forward="true" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="15" lean-forward="false" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="15" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -57,11 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Entity/User.php">
+      <file leaf-file-name="Client.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Client.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="29" column="5" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="29" selection-end-column="5" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -82,51 +105,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
               <caret line="19" column="38" lean-forward="false" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CvRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Repository/CvRepository.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1530">
-              <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
-              <folding>
-                <marker date="1534508568030" expanded="true" signature="367:389" ph="SELECT * FRO... AppBundle" />
-                <marker date="1534508568030" expanded="true" signature="367:396" ph="SELECT c FRO... App" />
-                <marker date="1534508568030" expanded="true" signature="367:408" ph="SELECT c FRO... App" />
-                <marker date="1534508568030" expanded="true" signature="367:409" ph="SELECT c FRO... App" />
-                <marker date="1534508568030" expanded="true" signature="367:415" ph="SELECT c FRO... App" />
-                <marker date="1534508568030" expanded="true" signature="367:416" ph="SELECT c FRO... App" />
-                <marker date="1534508568030" expanded="true" signature="367:417" ph="SELECT c FRO... App" />
-                <marker date="1534508568030" expanded="true" signature="367:660" ph="SELECT c FRO... App" />
-                <marker date="1534508568030" expanded="true" signature="3143:3354" ph="select roles... " />
-                <marker date="1534508568030" expanded="true" signature="3143:3399" ph="select cv fr... cv_technologie" />
-                <marker date="1534508568030" expanded="true" signature="3143:3444" ph="select cv.id... cv_technologie" />
-                <marker date="1534508568030" expanded="true" signature="3143:3445" ph="select cv.id... cv_technologie" />
-                <marker date="1534508568030" expanded="true" signature="3143:3473" ph="select cv.id... cv_technologie" />
-                <marker date="1534508568030" expanded="true" signature="3143:3475" ph="select cv.id... cv_technologie" />
-                <marker date="1534508568030" expanded="true" signature="3143:3488" ph="select cv.id... cv_technologie" />
-                <marker date="1534508568030" expanded="true" signature="3143:3501" ph="select cv.id... cv_technologie" />
-                <marker date="1534508568030" expanded="true" signature="3143:3502" ph="select cv.id... cv_technologie" />
-                <marker date="1534508568030" expanded="true" signature="3143:3511" ph="select cv.id... cv_technologie" />
-                <marker date="1534508568030" expanded="true" signature="3143:3512" ph="select cv.id... cv_technologie" />
-                <marker date="1534508568030" expanded="true" signature="3143:3534" ph="select cv.id... cv_technologie" />
-                <marker date="1534508568030" expanded="true" signature="3143:3535" ph="select cv.id... cv_technologie" />
-                <marker date="1534508568030" expanded="true" signature="3143:3546" ph="select cv.id... cv_technologie" />
-                <marker date="1534508568030" expanded="true" signature="3143:3547" ph="select roles... " />
-                <marker date="1534508568030" expanded="true" signature="3143:3597" ph="select cv.id... cv_technologie" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EntityManager.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/EntityManager.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5236">
-              <caret line="333" column="38" lean-forward="false" selection-start-line="333" selection-start-column="20" selection-end-line="333" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -205,7 +183,6 @@
         <option value="$PROJECT_DIR$/src/Controller/DemoController.php" />
         <option value="$PROJECT_DIR$/src/Form/CategorieType.php" />
         <option value="$PROJECT_DIR$/src/Form/TechnologieType.php" />
-        <option value="$PROJECT_DIR$/src/Controller/CVController.php" />
         <option value="$PROJECT_DIR$/templates/ajouteCV.html.twig" />
         <option value="$PROJECT_DIR$/src/Form/CVFormType.php" />
         <option value="$PROJECT_DIR$/config/packages/security.yaml" />
@@ -214,13 +191,14 @@
         <option value="$PROJECT_DIR$/src/Repository/loginRepository.php" />
         <option value="$PROJECT_DIR$/src/Entity/User.php" />
         <option value="$PROJECT_DIR$/templates/base.html.twig" />
-        <option value="$PROJECT_DIR$/config/services.yaml" />
         <option value="$PROJECT_DIR$/src/Form/CVType.php" />
         <option value="$PROJECT_DIR$/src/Entity/base64.php" />
         <option value="$PROJECT_DIR$/src/Repository/CvRepository.php" />
         <option value="$PROJECT_DIR$/src/Entity/Categorie.php" />
         <option value="$PROJECT_DIR$/src/Entity/Technologie.php" />
         <option value="$PROJECT_DIR$/src/Controller/CvController.php" />
+        <option value="$PROJECT_DIR$/config/services.yaml" />
+        <option value="$PROJECT_DIR$/src/Controller/CVController.php" />
       </list>
     </option>
   </component>
@@ -333,8 +311,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1443" />
-    <option name="y" value="-104" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1382" />
     <option name="height" value="784" />
   </component>
@@ -359,6 +337,11 @@
             <path>
               <item name="gestion_cv1" type="b2602c69:ProjectViewProjectNode" />
               <item name="gestion_cv1" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="gestion_cv1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gestion_cv1" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="gestion_cv1" type="b2602c69:ProjectViewProjectNode" />
@@ -483,26 +466,29 @@
       <workItem from="1534452687112" duration="596000" />
       <workItem from="1534489566020" duration="11528000" />
       <workItem from="1534507962458" duration="8896000" />
+      <workItem from="1534523349304" duration="2554000" />
+      <workItem from="1534570029679" duration="3749000" />
+      <workItem from="1534669097846" duration="401000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="313957000" />
+    <option name="totallyTimeSpent" value="320661000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1358" y="-312" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14895834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20937042" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18162619" sideWeight="0.5052083" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31784582" sideWeight="0.49479166" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30866143" sideWeight="0.49479166" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -742,13 +728,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Client.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/CategorieController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -792,25 +771,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="15" lean-forward="false" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env.dist">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="63" lean-forward="false" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/services.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="6" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -824,43 +788,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/CVType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="35" column="26" lean-forward="false" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/base64.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="10" column="28" lean-forward="false" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/RefreshToken.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/base64.php" />
     <entry file="file://$PROJECT_DIR$/vendor/doctrine/orm/lib/Doctrine/ORM/EntityManager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5236">
           <caret line="333" column="38" lean-forward="false" selection-start-line="333" selection-start-column="20" selection-end-line="333" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/loginRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -868,40 +800,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1530">
           <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
-          <folding>
-            <marker date="1534508568030" expanded="true" signature="367:389" ph="SELECT * FRO... AppBundle" />
-            <marker date="1534508568030" expanded="true" signature="367:396" ph="SELECT c FRO... App" />
-            <marker date="1534508568030" expanded="true" signature="367:408" ph="SELECT c FRO... App" />
-            <marker date="1534508568030" expanded="true" signature="367:409" ph="SELECT c FRO... App" />
-            <marker date="1534508568030" expanded="true" signature="367:415" ph="SELECT c FRO... App" />
-            <marker date="1534508568030" expanded="true" signature="367:416" ph="SELECT c FRO... App" />
-            <marker date="1534508568030" expanded="true" signature="367:417" ph="SELECT c FRO... App" />
-            <marker date="1534508568030" expanded="true" signature="367:660" ph="SELECT c FRO... App" />
-            <marker date="1534508568030" expanded="true" signature="3143:3354" ph="select roles... " />
-            <marker date="1534508568030" expanded="true" signature="3143:3399" ph="select cv fr... cv_technologie" />
-            <marker date="1534508568030" expanded="true" signature="3143:3444" ph="select cv.id... cv_technologie" />
-            <marker date="1534508568030" expanded="true" signature="3143:3445" ph="select cv.id... cv_technologie" />
-            <marker date="1534508568030" expanded="true" signature="3143:3473" ph="select cv.id... cv_technologie" />
-            <marker date="1534508568030" expanded="true" signature="3143:3475" ph="select cv.id... cv_technologie" />
-            <marker date="1534508568030" expanded="true" signature="3143:3488" ph="select cv.id... cv_technologie" />
-            <marker date="1534508568030" expanded="true" signature="3143:3501" ph="select cv.id... cv_technologie" />
-            <marker date="1534508568030" expanded="true" signature="3143:3502" ph="select cv.id... cv_technologie" />
-            <marker date="1534508568030" expanded="true" signature="3143:3511" ph="select cv.id... cv_technologie" />
-            <marker date="1534508568030" expanded="true" signature="3143:3512" ph="select cv.id... cv_technologie" />
-            <marker date="1534508568030" expanded="true" signature="3143:3534" ph="select cv.id... cv_technologie" />
-            <marker date="1534508568030" expanded="true" signature="3143:3535" ph="select cv.id... cv_technologie" />
-            <marker date="1534508568030" expanded="true" signature="3143:3546" ph="select cv.id... cv_technologie" />
-            <marker date="1534508568030" expanded="true" signature="3143:3547" ph="select roles... " />
-            <marker date="1534508568030" expanded="true" signature="3143:3597" ph="select cv.id... cv_technologie" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/CV.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="32" column="53" lean-forward="false" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="61" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -909,14 +807,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="29" column="5" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="29" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Categorie.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="19" column="38" lean-forward="false" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
           <folding />
         </state>
       </provider>
@@ -929,13 +819,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/CvController.php">
+    <entry file="file://$PROJECT_DIR$/src/Entity/Categorie.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+        <state relative-caret-position="170">
+          <caret line="19" column="38" lean-forward="false" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/loginRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/CVType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="35" column="26" lean-forward="false" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/RefreshToken.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/CV.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="32" column="53" lean-forward="false" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="15" lean-forward="false" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/CVController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="58" column="49" lean-forward="false" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="49" />
           <folding>
             <element signature="e#34#52#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/services.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="46" lean-forward="true" selection-start-line="31" selection-start-column="46" selection-end-line="31" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>

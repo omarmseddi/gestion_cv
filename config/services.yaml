@@ -9,6 +9,7 @@ parameters:
     username: 'mkhanfir-stg@spark-it.fr'
     password: 'aminaAMINA2015.'
     urlSp: 'https://sparkitcorp.sharepoint.com/sites/test2'
+    directoryFiles: 'C:\Users\ASUS\Documents\start/'
 services:
     # default configuration for services in *this* file
     _defaults:
